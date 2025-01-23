@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore our premium plans for individuals, professionals, and businesses. Unlock exclusive features today!">
+    <meta name="keywords" content="Premium Plans, Pricing, Subscription">
+    <meta name="author" content="Your Company Name">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Premium Plans</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://i.pinimg.com/474x/fc/d7/ef/fcd7efb3fa35f5e4b6f87373f5d05019.jpg');
+            color: white;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: rgba(33, 42, 53, 0.9);
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 5px 10px;
+            transition: background 0.3s ease;
+            border-radius: 5px;
+            font-size: 40px;
+        }
+
+        nav ul li a:hover {
+            background-color: #333;
+            border-radius: 5px;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+       
+        /* Main Content Styles */
+        .container {
+            max-width: 1200px;
+            margin: 100px auto 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        /* Premium Plan Cards */
+        .cards {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .card h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .card .price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .card button {
+            background: #000000;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .card button:hover {
+            background: #333;
+        }
+
+        /* Footer Styles */
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: white;
+        }
+
+        footer a {
+            color: #FFD700;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .card {
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <div class="logo">
+            <a href="/index.html">
+                <img src="/photo/logo.jpg" alt="Company Logo">
+            </a>
+        </div>
+        <nav>
+            <ul>
+
+                <li><a href="#contact"><i class="fa-brands fa-telegram"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container" id="plans">
+            <h2>Premium Plans</h2>
+            <p>Unlock the full potential of our services with the perfect plan for you.</p>
+            <div class="cards">
+                <div class="card">
+                    <h2>Basic</h2>
+                    <p>Perfect for individuals starting out.</p>
+                    <p class="price">$9.99/month</p>
+                    <button onclick="subscribe('Basic')">Get Started</button>
+                </div>
+                <div class="card">
+                    <h2>Pro</h2>
+                    <p>For professionals who need more features.</p>
+                    <p class="price">$19.99/month</p>
+                    <button onclick="subscribe('Pro')">Upgrade Now</button>
+                </div>
+                <div class="card">
+                    <h2>Enterprise</h2>
+                    <p>Tailored solutions for businesses.</p>
+                    <p class="price">$49.99/month</p>
+                    <button onclick="subscribe('Enterprise')">Contact Sales</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Your Company Name. All Rights Reserved. | <a href="#contact">Contact Us</a></p>
+    </footer>
+
+    <script>
+        // Subscription Button Handler
+        function subscribe(plan) {
+            const userConfirmed = confirm(`   channel telegram anime @RcSrAK `);
+            if (userConfirmed) {
+                window.location.href = `https://RcSrAK.t.me/?plan=${encodeURIComponent(plan)}`;
+            }
+        }
+    </script>
+</body>
+</html>

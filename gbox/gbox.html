@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Premium Page</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1d2671, #c33764);
+            color: #f8f9fa;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.85);
+            padding: 25px;
+            text-align: center;
+            font-size: 26px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 25px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 35px;
+            line-height: 1.7;
+        }
+
+        .cards {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 25px;
+            border-radius: 12px;
+            width: 280px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.07);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .card h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            font-size: 1rem;
+            margin-bottom: 25px;
+        }
+
+        .card .price {
+            font-size: 1.6rem;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        .card button {
+            background: #ff5722;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            color: #fff;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .card button:hover {
+            background: #e64a19;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.85);
+            padding: 15px;
+            text-align: center;
+            margin-top: 50px;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Discover Our Premium Plans
+    </header>
+    <div class="container">
+        <h1>Upgrade to Premium</h1>
+        <p>Experience exclusive features and benefits with our all-new premium packages.</p>
+
+        <div class="cards">
+            <div class="card">
+                <h2>Starter</h2>
+                <p>An excellent choice for beginners.</p>
+                <p class="price">$8.99/month</p>
+                <button>Get Started</button>
+            </div>
+
+            <div class="card">
+                <h2>Advanced</h2>
+                <p>For professionals needing advanced tools.</p>
+                <p class="price">$18.99/month</p>
+                <button>Upgrade Now</button>
+            </div>
+
+            <div class="card">
+                <h2>Business</h2>
+                <p>Comprehensive solutions for enterprises.</p>
+                <p class="price">$48.99/month</p>
+                <button>Contact Us</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Premium Services. All rights reserved.
+    </footer>
+</body>
+</html>

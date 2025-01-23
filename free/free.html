@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAK</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #212a35;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .header .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .header1 .search-bar {
+            display: flex;
+            align-items: center;
+            margin: 70px 20px 0;
+        }
+
+        .header1 .search-bar input {
+            padding: 8px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            outline: none;
+            width: 300px;
+            transition: width 0.3s ease;
+        }
+
+        .header1 .search-bar button {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .header .menu-icon {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            margin-top: 60px;
+            display: flex;
+            justify-content: space-around;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-top: 5px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #555;
+            font-weight: bold;
+            padding: 10px;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover, .navbar a.active {
+            color: #007bff;
+        }
+
+        /* App Grid */
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        /* App Card */
+        .app-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .app-card img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .app-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .app-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .app-button {
+            display: inline-block;
+            padding: 8px 14px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+
+        .app-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px 0;
+            background-color: #212a35;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .bottom-nav a {
+            color: white;
+            font-size: 22px;
+            transition: color 0.3s;
+        }
+
+        .bottom-nav a:hover {
+            color: #007bff;
+        }
+
+        @media screen and (min-width: 500px) and (max-width: 1231px) {
+            /* Adjust search bar width for medium screens */
+            .header1 .search-bar input {
+                width: 80%; /* Adjust to fit better within the screen width */
+            }
+        
+            /* Adjust app grid for medium screens */
+            .app-grid {
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); /* Slightly smaller cards */
+                gap: 15px; /* Reduce gap to save space */
+            }
+        
+            /* Adjust app card styling for medium screens */
+            .app-card img {
+                width: 70px; /* Slightly smaller icons */
+                height: 70px;
+            }
+        
+            .app-title {
+                font-size: 14px; /* Slightly smaller text */
+            }
+        
+            .app-button {
+                font-size: 13px; /* Adjust button size */
+                padding: 6px 10px; /* Adjust padding */
+            }
+        
+            /* Navigation bar links */
+            .navbar a {
+                padding: 8px; /* Smaller padding for medium screens */
+                font-size: 14px;
+            }
+        
+            /* Bottom navigation icons */
+            .bottom-nav a {
+                font-size: 20px; /* Slightly smaller icons */
+            }
+        }
+        
+
+        @media screen and (max-width: 780px) {
+            .header1 .search-bar input {
+                width: calc(100% - 50px);
+            }
+
+            .app-grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
+
+            .app-card img {
+                width: 60px;
+                height: 60px;
+            }
+
+            .app-title {
+                font-size: 14px;
+            }
+
+            .app-button {
+                font-size: 12px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <div class="logo">
+            <img src="/photo/logo.jpg" alt="Logo">
+        </div>
+
+        <div class="menu-icon">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </div>
+    <div class="header1">
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search for apps...">
+            <button onclick="searchApps()"><i class="fa fa-search"></i></button>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="/index.html" >APP STORE</a>
+        <a href="free/free.html" class="active">FREE</a>
+        <a href="/gane-store/game-sotre.html">GAME APP </a>
+    </div>
+
+    <!-- App Grid -->
+     
+    <div class="app-grid" id="appGrid"></div>
+
+    free
+    <div class="app-grid" id="appGrid"></div>
+
+    <!-- Bottom Navigation -->
+    <div class="bottom-nav">
+        <a href="#"><i class="fa-solid fa-gamepad"></i></a>
+        <a href="/gane-store/game-sotre.html"><i class="fa-brands fa-app-store-ios"></i></a>
+        <a href="/index.html"><i class="fa-solid fa-house"></i></a>
+        <a href="#"><i class="fa-solid fa-shop"></i></a>
+        <a href="#"><i class="fa-solid fa-user"></i></a>
+    </div>
+
+    <script>
+        // App data
+        const apps = [
+    { name: "Esign free", img: "https://ipaomtk.com/wp-content/uploads/2023/03/esign-ipa.jpg", button: "Go to Buy" },
+];
+
+
+
+        // Populate app grid
+        const appGrid = document.getElementById("appGrid");
+        apps.forEach(app => {
+            appGrid.innerHTML += `
+                <div class="app-card" data-name="${app.name}">
+                    <img src="${app.img}" alt="${app.name}">
+                    <div class="app-title">${app.name}</div>
+                    <a href="https://api.khoindvn.eu.org/0qvzM4" class="app-button">${app.button}</a>
+                </div>
+            `;
+        });
+
+        // Debounce for search functionality
+        let debounceTimer;
+        const searchInput = document.getElementById("searchInput");
+
+        function searchApps() {
+            const query = searchInput.value.toLowerCase();
+            const appCards = document.querySelectorAll(".app-card");
+            appCards.forEach(card => {
+                const appName = card.getAttribute("data-name").toLowerCase();
+                card.style.display = appName.includes(query) ? "block" : "none";
+            });
+        }
+
+        searchInput.addEventListener("input", () => {
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(searchApps, 300);
+        });
+    </script>
+
+</body>
+</html>
